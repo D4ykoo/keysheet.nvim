@@ -1,0 +1,13 @@
+# keep the build context (and image) small
+.git
+.github
+node_modules
+out
+test
+examples
+*.md
+Dockerfile
+.dockerignore
+.gitignore
+tsconfig.json
+docker-compose.yml

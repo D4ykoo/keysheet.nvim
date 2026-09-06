@@ -1,0 +1,9 @@
+# build output
+/out/
+
+# dependencies
+/node_modules/
+
+# editor / OS cruft
+.DS_Store
+*.log

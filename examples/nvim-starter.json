@@ -1,0 +1,47 @@
+{
+	"title": "neovim starter keymaps",
+	"columns": 2,
+	"sections": [
+		{
+			"name": "motions",
+			"color": "sky",
+			"maps": [
+				{ "desc": "leader", "keys": "\" \"", "muted": true },
+				{ "desc": "half page down / up", "keys": "C-d / C-u" },
+				{ "desc": "next / previous match", "keys": "n / N" },
+				{ "desc": "start / end of line", "keys": "0 / $" },
+				{ "desc": "top / bottom of file", "keys": "gg / G" }
+			]
+		},
+		{
+			"name": "edit",
+			"color": "orchid",
+			"maps": [
+				{ "desc": "undo / redo", "keys": "u / C-r" },
+				{ "desc": "delete line", "keys": "dd" },
+				{ "desc": "yank line", "keys": "yy" },
+				{ "desc": "paste after / before", "keys": "p / P" },
+				{ "desc": "visual block", "keys": "C-v" }
+			]
+		},
+		{
+			"name": "files",
+			"color": "pink",
+			"maps": [
+				{ "desc": "find files", "keys": "<leader> + f" },
+				{ "desc": "live grep", "keys": "<leader> + g" },
+				{ "desc": "recent files", "keys": "<leader> + r" },
+				{ "desc": "save / quit", "keys": ":w / :q" }
+			]
+		},
+		{
+			"name": "windows",
+			"color": "mint",
+			"maps": [
+				{ "desc": "split below / right", "keys": ":sp / :vs" },
+				{ "desc": "move between windows", "keys": "C-h/j/k/l" },
+				{ "desc": "close window", "keys": "C-w q" }
+			]
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"title": "tmux cheat sheet",
+	"columns": 2,
+	"theme": { "background": "#12140f", "card": "#1e2118" },
+	"sections": [
+		{
+			"name": "sessions",
+			"color": "chartreuse",
+			"maps": [
+				{ "desc": "prefix", "keys": "C-b", "muted": true },
+				{ "desc": "new session", "keys": "tmux new -s" },
+				{ "desc": "list sessions", "keys": "prefix + s" },
+				{ "desc": "detach", "keys": "prefix + d" },
+				{ "desc": "rename session", "keys": "prefix + $" }
+			]
+		},
+		{
+			"name": "windows",
+			"color": "amber",
+			"maps": [
+				{ "desc": "new window", "keys": "prefix + c" },
+				{ "desc": "next / previous", "keys": "prefix + n/p" },
+				{ "desc": "select by number", "keys": "prefix + 0-9" },
+				{ "desc": "rename window", "keys": "prefix + ," }
+			]
+		},
+		{
+			"name": "panes",
+			"color": "coral",
+			"maps": [
+				{ "desc": "split horizontal", "keys": "prefix + %" },
+				{ "desc": "split vertical", "keys": "prefix + \"" },
+				{ "desc": "move between panes", "keys": "prefix + arrows" },
+				{ "desc": "close pane", "keys": "prefix + x" },
+				{ "desc": "zoom pane", "keys": "prefix + z" }
+			]
+		}
+	]
+}

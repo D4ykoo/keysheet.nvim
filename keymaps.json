@@ -1,0 +1,23 @@
+{
+	"title": "example keymaps",
+	"columns": 2,
+	"sections": [
+		{
+			"name": "motions",
+			"color": "sky",
+			"maps": [
+				{ "desc": "leader", "keys": "\" \"", "muted": true },
+				{ "desc": "half page down / up", "keys": "C-d / C-u" },
+				{ "desc": "next / previous match", "keys": "n / N" }
+			]
+		},
+		{
+			"name": "files",
+			"color": "pink",
+			"maps": [
+				{ "desc": "find files", "keys": "<leader> + f" },
+				{ "desc": "live grep", "keys": "<leader> + g" }
+			]
+		}
+	]
+}

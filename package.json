@@ -1,0 +1,14 @@
+{
+	"name": "keysheet",
+	"version": "0.1.0",
+	"description": "Generate keymap overview sheets (SVG / HTML / PNG / PDF) from a declarative JSON config, or auto-extract them from a Neovim config",
+	"type": "module",
+	"bin": { "keysheet": "src/cli.ts" },
+	"scripts": {
+		"serve": "bun run src/cli.ts serve keymaps.json",
+		"build": "bun run src/cli.ts build keymaps.json -o out --format svg,html",
+		"extract": "bun run src/cli.ts extract",
+		"test": "node --test test/*.test.ts"
+	},
+	"engines": { "bun": ">=1.0.0", "node": ">=22.6.0" }
+}
