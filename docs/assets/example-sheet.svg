@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 750" width="2000" height="750" font-family="'JetBrains Mono','Fira Code','Cascadia Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="17">
+<rect width="2000" height="750" fill="#10151c"/>
+<rect width="2000" height="750" rx="44" fill="#10151c"/>
+<g>
+<rect x="72" y="72" width="900" height="294" rx="18" fill="#1b222c"/>
+<rect x="442.2" y="49" width="159.5" height="46" rx="8" fill="#8fd0dd"/>
+<text x="522.0" y="72" fill="#10151c" font-weight="700" text-anchor="middle" dominant-baseline="central">motions</text>
+<text x="116" y="155" fill="#657081" dominant-baseline="central">leader</text>
+<text x="928" y="155" fill="#657081" text-anchor="end" dominant-baseline="central">&quot; &quot;</text>
+<text x="116" y="193" fill="#dfe4ea" dominant-baseline="central">half page down / up</text>
+<text x="928" y="193" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">C-d / C-u</text>
+<text x="116" y="231" fill="#dfe4ea" dominant-baseline="central">next / previous match</text>
+<text x="928" y="231" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">n / N</text>
+<text x="116" y="269" fill="#dfe4ea" dominant-baseline="central">start / end of line</text>
+<text x="928" y="269" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">0 / $</text>
+<text x="116" y="307" fill="#dfe4ea" dominant-baseline="central">top / bottom of file</text>
+<text x="928" y="307" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">gg / G</text>
+</g>
+<g>
+<rect x="1028" y="72" width="900" height="294" rx="18" fill="#1b222c"/>
+<rect x="1413.6" y="49" width="128.9" height="46" rx="8" fill="#d7a2ea"/>
+<text x="1478.0" y="72" fill="#10151c" font-weight="700" text-anchor="middle" dominant-baseline="central">edit</text>
+<text x="1072" y="155" fill="#dfe4ea" dominant-baseline="central">undo / redo</text>
+<text x="1884" y="155" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">u / C-r</text>
+<text x="1072" y="193" fill="#dfe4ea" dominant-baseline="central">delete line</text>
+<text x="1884" y="193" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">dd</text>
+<text x="1072" y="231" fill="#dfe4ea" dominant-baseline="central">yank line</text>
+<text x="1884" y="231" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">yy</text>
+<text x="1072" y="269" fill="#dfe4ea" dominant-baseline="central">paste after / before</text>
+<text x="1884" y="269" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">p / P</text>
+<text x="1072" y="307" fill="#dfe4ea" dominant-baseline="central">visual block</text>
+<text x="1884" y="307" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">C-v</text>
+</g>
+<g>
+<rect x="72" y="422" width="900" height="256" rx="18" fill="#1b222c"/>
+<rect x="452.5" y="399" width="139.1" height="46" rx="8" fill="#dd8fb4"/>
+<text x="522.0" y="422" fill="#10151c" font-weight="700" text-anchor="middle" dominant-baseline="central">files</text>
+<text x="116" y="505" fill="#dfe4ea" dominant-baseline="central">find files</text>
+<text x="928" y="505" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">&lt;leader&gt; + f</text>
+<text x="116" y="543" fill="#dfe4ea" dominant-baseline="central">live grep</text>
+<text x="928" y="543" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">&lt;leader&gt; + g</text>
+<text x="116" y="581" fill="#dfe4ea" dominant-baseline="central">recent files</text>
+<text x="928" y="581" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">&lt;leader&gt; + r</text>
+<text x="116" y="619" fill="#dfe4ea" dominant-baseline="central">save / quit</text>
+<text x="928" y="619" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">:w / :q</text>
+</g>
+<g>
+<rect x="1028" y="422" width="900" height="218" rx="18" fill="#1b222c"/>
+<rect x="1398.2" y="399" width="159.5" height="46" rx="8" fill="#8fdd94"/>
+<text x="1478.0" y="422" fill="#10151c" font-weight="700" text-anchor="middle" dominant-baseline="central">windows</text>
+<text x="1072" y="505" fill="#dfe4ea" dominant-baseline="central">split below / right</text>
+<text x="1884" y="505" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">:sp / :vs</text>
+<text x="1072" y="543" fill="#dfe4ea" dominant-baseline="central">move between windows</text>
+<text x="1884" y="543" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">C-h/j/k/l</text>
+<text x="1072" y="581" fill="#dfe4ea" dominant-baseline="central">close window</text>
+<text x="1884" y="581" fill="#f4f6f8" text-anchor="end" dominant-baseline="central">C-w q</text>
+</g>
+</svg>

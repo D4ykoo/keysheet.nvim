@@ -1,4 +1,7 @@
 # keysheet
+Generate pretty keymap cheatsheets from a small JSON file — or auto-extract them from your Neovim config — edit them live in the browser, and export to SVG, PNG, HTML or PDF.
+
+![A keymap cheatsheet rendered by keysheet](docs/assets/example-sheet.svg)
 
 ---
 
@@ -9,8 +12,9 @@ DISCLAIMER: I do not want to actively maintain such an AI slop - but feel free t
 
 ---
 
-Generate keymap overview sheets — the dark-card, colored-pill style — from a
-declarative JSON config. Zero dependencies, runs on Bun (Node ≥ 22 also works,
+![The keysheet editor](docs/assets/editor.png)
+
+Zero dependencies, runs on Bun (Node ≥ 22 also works,
 since only `node:*` APIs are used).
 
 ```
@@ -60,7 +64,7 @@ docker compose up -d            # detached
 ```
 
 To run the published image instead of building locally, comment out `build`
-and uncomment the `image: ghcr.io/<owner>/keysheet:latest` line.
+and uncomment the `image: ghcr.io/d4ykoo/keysheet.nvim:latest` line.
 
 
 ## Workflow (editor)
@@ -71,16 +75,19 @@ bun run serve            # opens the editor at http://localhost:4711
 
 The editor is the whole loop in one page:
 
-1. **Upload config** — pick your `nvim` folder (or a set of `.lua` files).
-   Every file is scanned and turned into one section per file, colored
-   round-robin from the palette. Descriptions are inferred from each map's
-   right-hand side where possible (`harpoon:list():select(1)` → "nav file 1",
-   `<cmd>NvimTreeToggle<cr>` → "NvimTreeToggle", `vim.lsp.buf.rename` →
-   "rename symbol"); the rest come through as `TODO: describe`.
+1. **Load your config** — drag your `nvim` folder straight onto the page
+   (easiest), or use the **config folder** button; **.lua files** picks
+   individual files instead. Every `.lua` file is scanned recursively and
+   turned into one section per file, colored round-robin from the palette.
+   Descriptions are inferred from each map's right-hand side where possible
+   (`harpoon:list():select(1)` → "nav file 1", `<cmd>NvimTreeToggle<cr>` →
+   "NvimTreeToggle", `vim.lsp.buf.rename` → "rename symbol"); the rest come
+   through as `TODO: describe`.
    Already have a sheet? **open .json** loads a `keymaps.json` (e.g. one you
    exported earlier) straight into the editor — no extraction, since JSON is
-   already the sheet format. The **upload config** / **.lua files** buttons are
-   only for extracting from a Lua config; feeding them a `.json` won't work.
+   already the sheet format. The **config folder** / **.lua files** buttons are
+   only for extracting from a Lua config; drop or open a `.json` and it's
+   loaded as a sheet instead.
 2. **Edit** — rename sections, change pill colors, pin sections to a column,
    reorder sections, add/remove/reword rows, mark meta rows as dimmed. The
    preview on the right updates live on every keystroke.
@@ -108,8 +115,9 @@ CLI rasterizer would either need a font bundle or silently substitute glyphs.
 
 ## Seeding from an existing Neovim config
 
-The editor's **Upload config** button is the easy path. For scripting there's
-also a headless CLI extractor that writes the same draft JSON:
+Dragging your `nvim` folder onto the editor (or the **config folder** button)
+is the easy path. For scripting there's also a headless CLI extractor that
+writes the same draft JSON:
 
 ```
 bun run src/cli.ts extract ~/.config/nvim -o draft.json
@@ -152,7 +160,7 @@ mint forest violet amber coral steel` (see `src/theme.ts`). Theme tokens
 top-level `"theme": { ... }` object.
 
 Descriptions that would collide with their keys are truncated with `…` and
-reported as a warning (CLI stderr / yellow text under the preview).
+reported as a warning (CLI stderr / toast in the editor).
 
 ## Layout constants
 
@@ -180,10 +188,11 @@ src/
 client/
   editor.html    editor shell
   editor.css     editor styles
-  editor.js      editor logic (state, live render, upload, exports)
+  editor.js      editor logic (state, live render, upload, drag-drop, exports)
 test/
   *.test.ts      node:test suites for the modules above
 examples/        ready-to-render sample sheets
+docs/assets/     screenshots used in this README
 Dockerfile       editor server image (bun-alpine, non-root)
 docker-compose.yml  build/run the editor with a persisted keymaps.json
 .github/workflows/docker.yml   build + push to GHCR on tags/main

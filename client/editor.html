@@ -10,7 +10,7 @@
 <header>
 	<span class="brand">keysheet</span>
 	<span class="path">{{CONFIG_PATH}}</span>
-	<label class="btn">upload config<input id="up-dir" type="file" webkitdirectory directory multiple hidden></label>
+	<label class="btn" title="Opens a folder picker. Your browser will ask to confirm the upload — tip: drag the folder onto the page to skip that prompt.">config folder<input id="up-dir" type="file" webkitdirectory directory multiple hidden></label>
 	<label class="btn">.lua files<input id="up-files" type="file" accept=".lua" multiple hidden></label>
 	<label class="btn">open .json<input id="up-json" type="file" accept=".json,application/json" hidden></label>
 	<span class="sep"></span>
@@ -23,7 +23,6 @@
 	<button id="exp-json">JSON</button>
 	<span class="sep"></span>
 	<button id="save" class="primary">Save</button>
-	<span id="saved" class="saved"></span>
 </header>
 
 <main>
@@ -31,6 +30,15 @@
 	<div id="preview">loading…</div>
 </main>
 <div id="warnbar"></div>
+
+<div id="dropzone">
+	<div class="dz-inner">
+		<div class="dz-title">Drop your nvim folder</div>
+		<div class="dz-sub">every .lua file is scanned — or drop .lua files / a keysheet .json</div>
+	</div>
+</div>
+
+<div id="toasts"></div>
 
 <script src="/editor.js"></script>
 </body>

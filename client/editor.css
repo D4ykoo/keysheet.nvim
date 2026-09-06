@@ -7,6 +7,7 @@
 	--muted: #657081;
 	--accent: #8fd0dd;
 	--warn: #e5c07b;
+	--danger: #e8927c;
 }
 
 * {
@@ -240,7 +241,84 @@ main {
 	line-height: 1.5;
 }
 
-.saved {
+
+/* Folder drag-and-drop overlay */
+#dropzone {
+	position: fixed;
+	inset: 0;
+	z-index: 50;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	background: rgba(5, 7, 10, 0.82);
+	backdrop-filter: blur(2px);
+	/* Purely visual — the window handles the drop, so the overlay must never
+	   capture pointer events (a stuck overlay would otherwise block clicks). */
+	pointer-events: none;
+}
+
+#dropzone.show {
+	display: flex;
+}
+
+#dropzone .dz-inner {
+	border: 2px dashed var(--accent);
+	border-radius: 16px;
+	padding: 60px 90px;
+	text-align: center;
+	pointer-events: none;
+}
+
+#dropzone .dz-title {
 	color: var(--accent);
-	font-size: 12px;
+	font-size: 22px;
+	font-weight: 700;
+}
+
+#dropzone .dz-sub {
+	color: var(--muted);
+	font-size: 13px;
+	margin-top: 8px;
+}
+
+/* Toast notifications (replaces native alert) */
+#toasts {
+	position: fixed;
+	bottom: 16px;
+	right: 16px;
+	z-index: 60;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	max-width: 380px;
+}
+
+.toast {
+	background: var(--card);
+	color: var(--text);
+	border: 1px solid var(--line);
+	border-left: 3px solid var(--muted);
+	border-radius: 8px;
+	padding: 10px 14px;
+	font-size: 13px;
+	line-height: 1.4;
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+	cursor: pointer;
+	white-space: pre-line;
+	animation: toast-in 0.18s ease-out;
+}
+
+.toast-success { border-left-color: var(--accent); }
+.toast-error { border-left-color: var(--danger); }
+.toast-info { border-left-color: var(--muted); }
+
+.toast.leaving {
+	opacity: 0;
+	transform: translateY(6px);
+	transition: opacity 0.18s, transform 0.18s;
+}
+
+@keyframes toast-in {
+	from { opacity: 0; transform: translateY(6px); }
+	to { opacity: 1; transform: none; }
 }

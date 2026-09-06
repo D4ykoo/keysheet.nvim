@@ -8,7 +8,7 @@
 services:
   keysheet:
     build: .
-    image: ghcr.io/D4ykoo/keysheet:latest
+    image: ghcr.io/d4ykoo/keysheet.nvim:latest
     ports:
       - "4711:4711"
     environment:
