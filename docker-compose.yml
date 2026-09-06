@@ -3,6 +3,8 @@
 #   docker compose up --build        # build locally and run
 #   docker compose up -d             # detached
 #
+# To run the published image instead of building locally, comment out `build`
+# and uncomment `image` below.
 services:
   keysheet:
     build: .

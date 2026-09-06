@@ -8,10 +8,12 @@ FROM oven/bun:1-alpine
 WORKDIR /app
 
 # Copy only what the running server needs (see .dockerignore for exclusions).
-COPY package.json ./
-COPY src ./src
-COPY client ./client
-COPY keymaps.json ./
+# --chown=bun so the non-root runtime user can write keymaps.json when the
+# editor's Save button is used (without needing a bind-mount to fix ownership).
+COPY --chown=bun:bun package.json ./
+COPY --chown=bun:bun src ./src
+COPY --chown=bun:bun client ./client
+COPY --chown=bun:bun keymaps.json ./
 
 # The editor server. PORT/HOST are read from the environment (see cli.ts /
 # serve.ts); HOST=0.0.0.0 makes the port reachable from outside the container.

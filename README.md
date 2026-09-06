@@ -62,6 +62,7 @@ docker compose up -d            # detached
 To run the published image instead of building locally, comment out `build`
 and uncomment the `image: ghcr.io/<owner>/keysheet:latest` line.
 
+
 ## Workflow (editor)
 
 ```
